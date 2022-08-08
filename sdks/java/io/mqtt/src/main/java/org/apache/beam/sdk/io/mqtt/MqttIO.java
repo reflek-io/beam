@@ -220,6 +220,7 @@ public class MqttIO {
             clientId.substring(0, Math.min(clientId.length(), MQTT_3_1_MAX_CLIENT_ID_LENGTH));
         LOG.debug("MQTT client id set to {}", clientId);
         client.setClientId(clientId);
+        client.setVersion("3.1.1");
       } else {
         String clientId = UUID.randomUUID().toString();
         clientId =

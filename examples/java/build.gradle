@@ -60,6 +60,7 @@ dependencies {
   implementation project(":sdks:java:io:google-cloud-platform")
   implementation project(":sdks:java:io:kafka")
   implementation project(":sdks:java:extensions:ml")
+  implementation project(":sdks:java:io:mqtt")
   implementation library.java.avro
   implementation library.java.bigdataoss_util
   implementation library.java.google_api_client
@@ -164,7 +165,7 @@ task execute (type:JavaExec) {
 // Run this task to validate the Java environment setup for contributors
 task wordCount(type:JavaExec) {
   description "Run the Java word count example"
-  mainClass = "org.apache.beam.examples.WordCount"
+  mainClass = "org.apache.beam.examples.WindowedWordCount"
   classpath = sourceSets.main.runtimeClasspath
   systemProperties = System.getProperties()
   args = ["--output=/tmp/ouput.txt"]
